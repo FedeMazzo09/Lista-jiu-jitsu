@@ -40,7 +40,7 @@ public class Tecnica {
 
             case SOTTOMISSIONI:
                 if (nome.equalsIgnoreCase("Rear naked choke")) {
-                    this.livelloDiDipendenzaTecnica = 5;
+                    this.livelloDiDipendenzaTecnica = 2;
                 } else {
                     this.livelloDiDipendenzaTecnica = 4;
                 }
@@ -51,5 +51,16 @@ public class Tecnica {
         }
     }
 
+    public int compareTo(Tecnica t) {
+        if (this.livelloDiDipendenzaTecnica < t.livelloDiDipendenzaTecnica)
+            return -1;
+        else if (this.livelloDiDipendenzaTecnica == t.livelloDiDipendenzaTecnica)
+            return 0;
+        else
+            return 1;
+    }
 
+    public String toString() {
+        return nome + " - " + categoria + " - " + livelloDiDipendenzaTecnica;
+    }
 }
